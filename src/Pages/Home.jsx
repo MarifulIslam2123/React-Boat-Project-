@@ -12,14 +12,18 @@ function Home() {
     const getProduct = () => {
         fetch("https://dummyjson.com/products")
             .then((res) => res.json())
-            .then((data) => setProduct(data.products))
+            .then((data) => {
+                setProduct(data.products)
+            })
     };
 
     console.log(product);
 
     useEffect(() => {
         getProduct();
+
     }, []);
+
 
     return (
 
@@ -47,9 +51,15 @@ function Home() {
                     {/* <Link href='/'>
                         <p className="w-fit py-1 bg-red-400">See More</p>
                     </Link> */}
-                    <div className="flex  h-[30rem] overflow-hidden flex-wrap gap-7 justify-center">
-                        {product.map((allproducts, i) => (
-                            <Card key={i} productInfo={allproducts} />))}
+                    <div className="flex flex-wrap gap-7 justify-center">
+                        {product?.map((allproducts, i) => {
+
+                            if (i < 4) {
+                                return <Card key={i} productInfo={allproducts} />
+
+                            }
+                        })
+                        }
                     </div>
                 </div>
 
@@ -69,9 +79,15 @@ function Home() {
                     {/* <Link href='/'>
                         <p className="w-fit py-1 bg-red-400">See More</p>
                     </Link> */}
-                    <div className="flex  h-[60rem] overflow-hidden flex-wrap gap-7 justify-center">
-                        {product.map((allproducts, i) => (
-                            <Card key={i} productInfo={allproducts} />))}
+                    <div className="flex flex-wrap gap-7 justify-center">
+                        {product?.map((allproducts, i) => {
+
+                            if (i < 8) {
+                                return <Card key={i} productInfo={allproducts} />
+
+                            }
+                        })
+                        }
                     </div>
                 </div>
 
