@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 import banner from '../assets/banner.jpg';
 import d_banner from '../assets/d_banner.jpg';
@@ -61,6 +62,13 @@ function Home() {
                         })
                         }
                     </div>
+                    <div className="text-center mt-10">
+                        <Link to={"/shop"}>
+                            <button className="btn bg-red-400 text-center mx-auto text-white hover:text-black">Show all Products</button>
+                        </Link>
+
+                    </div>
+
                 </div>
 
 
@@ -89,11 +97,18 @@ function Home() {
                         })
                         }
                     </div>
+                    <div className="text-center mt-10">
+                        <Link to={"/shop"}>
+                            <button className="btn bg-red-400 text-center mx-auto text-white hover:text-black">Show all Products</button>
+                        </Link>
+
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+        </div >
 
 
 
